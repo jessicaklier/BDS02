@@ -1,0 +1,24 @@
+package com.devsuperior.bds02.controllers.exceptions;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ValidationError extends StandardError {
+	private static final long serialVersionUID = 1L;
+	
+	private List<FieldMessage> errors = new ArrayList<>();
+
+	public List<FieldMessage> getErrors() {
+		return errors;
+	}
+	
+	public void addError(String fieldName, String message) {
+		errors.add(new FieldMessage(fieldName, message));
+	}
+
+	public void setTimestamp(Instant now) {
+		// TODO Auto-generated method stub
+		
+	}
+}
